@@ -8,7 +8,6 @@ from langchain import LLMMathChain, OpenAI, SerpAPIWrapper, SQLDatabase, SQLData
 from langchain.agents import initialize_agent, Tool
 from langchain.agents import AgentType
 from langchain.chat_models import ChatOpenAI
-import os
 
 class Prompt(BaseModel):
     text: str
@@ -21,8 +20,8 @@ db = SQLDatabase.from_uri(
     f"postgresql+psycopg2://postgres:{password}@db.ffukbbseygykvzirelar.supabase.co:5432/postgres",
 )
 
-llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613", openai_api_key=config['OPENAI_API_KEY'] or os.getenv('OPENAI_API_KEY'))
-search = SerpAPIWrapper(serpapi_api_key=config['SERPER_API_KEY']  or os.getenv('OPENAI_API_KEY'))
+llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613", openai_api_key=config['OPENAI_API_KEY'])
+search = SerpAPIWrapper(serpapi_api_key=config['SERPER_API_KEY'])
 llm_math_chain = LLMMathChain.from_llm(llm=llm, verbose=True)
 db_chain = SQLDatabaseChain.from_llm(llm, db, verbose=True)
 
