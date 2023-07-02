@@ -2,17 +2,15 @@
 pwd
 python --version
 python3 -m pip install --upgrade pip
-python3 -m pip install pyenv
-# Set the Python version you want to install
-PYTHON_VERSION="3.11.0"  # Update this to the version you want
 
-# Install the specified Python version using pyenv
-pyenv install $PYTHON_VERSION
+sudo apt-get update
+sudo apt-get install software-properties-common
 
-# Set the installed version as the default one
-pyenv global $PYTHON_VERSION
+# Add deadsnakes PPA
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
 
-# Verify the new Python version
-python --version
+# Install the Python version you want
+sudo apt-get install python3.11
 
 pip install -r requirements.txt
