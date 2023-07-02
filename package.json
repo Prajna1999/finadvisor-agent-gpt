@@ -1,0 +1,39 @@
+{
+  "name": "project_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "mocha --require ts-node/register test/**/*.test.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.26.0",
+    "@types/swagger-ui-react": "^4.18.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "next": "^13.4.7",
+    "nodemon": "^2.0.22",
+    "openai": "^3.3.0",
+    "openapi": "^1.0.1",
+    "supabase": "^1.75.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-react": "^5.1.0",
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.3.3",
+    "@types/react": "18.2.14",
+    "axios": "^1.4.0",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1"
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "watch": [
+        "src",
+        "pages"
+    ],
+    "ext": "ts",
+    "ignore": [],
+    "exec": "npx ts-node  src/server.ts"
+}
