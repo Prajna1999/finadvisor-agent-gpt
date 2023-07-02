@@ -1,6 +1,6 @@
 # Fin Advisor GPT
 
-Fin Advisor GPT is a sophisticated financial assistant powered by OpenAI API, Langchain Agent SQLChain, Google SERP API, and OpenAI Functions. It is designed to handle your queries regarding financial data, perform complex mathematical calculations, and fetch relevant internet-based information. The application serves you through its primary endpoint, which is designed to accept POST requests containing your queries.
+Fin Advisor GPT is a sophisticated financial assistant powered by OpenAI API, Langchain Agent SQLChain, Google SERP API, and OpenAI Functions. It is designed to handle your queries regarding financial data, perform complex mathematical calculations, and fetch relevant internet-based information. The application serves you through its primary endpoint, which is designed to accept POST requests containing your queries. It;s the starting point for a Jarvis like fully autonomous Agent that can execute queries and tasks on user behalf.
 
 ## Table of Contents
 
@@ -73,7 +73,7 @@ The specific structure and content of the response will depend on your query and
 
 ## Example Query
 
-Let's consider a simple query: "My name is Robyn Vecard. What is 10 raised to power 2?"
+Let's consider a simple query: "My name is Robyn Vecard. How much did I spend in entertainment?"
 
 This query can be executed using the `requests` library in Python as follows:
 
@@ -81,7 +81,7 @@ This query can be executed using the `requests` library in Python as follows:
 import requests
 
 url = 'https://acorn-py.onrender.com/process-prompt'
-data = {"text": "My name is Robyn Vecard. What is 10 raised to power 2?"}
+data = {"text": "My name is Robyn Vecard. How much did I spend in entertainment?"}
 response = requests.post(url, json=data)
 
 print(response.json())
@@ -98,6 +98,18 @@ It's important to note that if your query requires accessing financial data from
 However, the agent does not stop processing there. It will try to fetch relevant information from the internet using the Search tool. Although this might not give you the specific data point you were seeking, it can often provide useful related information.
 
 Always ensure that the data you are querying for exists within the database for precise results.
+
+## Note on Agent Memory
+The agent do no have any memory as of now. So the agent do not remember previous coneversations.
+
+## Note on API start up time
+On first hitting the endpoint the server will take a few more seconds than usual to boot up. We would appreciate your patience for the time being.
+
+## Note on Latency and Rate Limiting
+OpenAI sometimes randomly throttles the API usage quota. If you feel your requests are not going through, contact gituprajna20@gmail.com. We will re-deploy with a new API key.
+
+## Note on Prompt Injection
+We made good progress in building guardrails around adversarial prompting and SQL injection attacks by prompt engineering. Future versions of the app would be more resilient to such attacks.
 
 
 ## Product Roadmap
@@ -124,6 +136,9 @@ A comprehensive dashboard is in the pipeline that will provide users with a holi
 
 We are working on AI-powered recommendations to help users make more informed financial decisions. This feature will analyze your financial behavior, goals, and market trends to provide personalized investment and saving advice.
 
+### Memory 
+Currently the agent does not possess long term memory. We are planning to use Langchain to enable this fefature.
+
 ### User-Friendly Elements
 
 Ease of use is a key focus area for us. We aim to continually enhance the user experience with intuitive design elements, seamless navigation, and helpful features. This includes expanding the functionality of the application to provide support for more financial operations, better data visualization, and comprehensive help and guidance features.
@@ -132,7 +147,7 @@ These features form the backbone of our upcoming development work, and we look f
 
 ## Conclusion
 
-Fin Advisor GPT is a powerful financial assistant capable of handling a wide variety of queries and tasks. By simply making a POST request to our endpoint, you can have complex calculations handled, specific database information fetched, or general internet data sourced. This service is intuitive and designed to be as user-friendly as possible, making your financial analysis and decision-making processes more efficient and informed.
+Fin Advisor GPT is a powerful financial assistant capable of handling a wide variety of queries and tasks. By simply making a POST request to our endpoint, you can have complex calculations handled, specific database information fetched, or general internet data sourced. This service is intuitive and designed to be as user-friendly as possible, making your financial analysis and decision-making processes more efficient and informed. We will build jarvis for finance.
 
 ## License
 
