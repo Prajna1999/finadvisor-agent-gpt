@@ -18,32 +18,26 @@ function NavigationBar() {
         >
           <Nav.Link
             href="/"
-            style={{
-              color: window.location.pathname === "/dashboard" && "white",
-            }}
+           
           >
             Dashboard
           </Nav.Link>
           <Nav.Link
             href="/finances"
-            style={{
-              color: window.location.pathname === "/finances" && "white",
-            }}
+        
           >
             Transactions
           </Nav.Link>
           <Nav.Link
             href="/accounts"
-            style={{
-              color: window.location.pathname === "/accounts" && "white",
-            }}
+           
           >
             Accounts
           </Nav.Link>
           <Nav.Link
             href="/categories"
             style={{
-              color: window.location.pathname === "/categories" && "white",
+              color:  "white",
             }}
           >
             Categories

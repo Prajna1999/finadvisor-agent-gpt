@@ -30,7 +30,7 @@ function PieChart() {
   };
 
   const options = {
-    responsive: true,
+    // responsive: true,
     title: {
       display: true,
       text: 'Your Financial Distribution',
