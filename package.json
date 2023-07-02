@@ -12,6 +12,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.26.0",
     "@types/swagger-ui-react": "^4.18.0",
+    "chart.js": "^4.3.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
@@ -20,6 +21,10 @@
     "nodemon": "^2.0.22",
     "openai": "^3.3.0",
     "openapi": "^1.0.1",
+    "react-awesome-reveal": "^4.2.5",
+    "react-bootstrap": "^2.8.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-router-dom": "^6.14.1",
     "supabase": "^1.75.2",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-react": "^5.1.0",
