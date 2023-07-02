@@ -9,7 +9,7 @@ dotenv.config();
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
-const port = process.env.PORT || 5000; // Custom port number
+const port = process.env.PORT || 5001; // Custom port number
 
 app.prepare().then(() => {
     createServer((req, res) => {

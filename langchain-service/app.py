@@ -40,6 +40,8 @@ def process_prompt(prompt: Prompt):
     try:
         question = prompt.text
         result = agent.run(question)
-        return JSONResponse(content=result)
+        return JSONResponse(content={
+            "aiResponse": result
+        })
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)
