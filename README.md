@@ -52,7 +52,9 @@ cd acron/langchain-service
 # if virtualenv is not installed install by running `pip install venv`
 python -m venv venv
 ./venv/Scripts/activate
-# Once Virtualenv is activated then run below command to bring up the server
+# Once Virtualenv is activated then run below command install all the dependecies
+pip install -r requirements.txt
+# once all the dependencies are installed run the below command to bring up the server
 uvicorn app:app --reload
 # Applicaton will be available by default on localhost:8000
 ```
@@ -83,9 +85,9 @@ To access the application and consume the backend UI go to Web browser and go to
 
 ## API Documentation
 
-| API route                     | Request                                                                                                                                   | Response                                                                                                                                                                                                                                                                                                                                                                                          | Description |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| localhost:8000/process-prompt | POST `{"prompt":"Hi My user id is {} and my name is {}. What are my top 3 expenses and top 3 incomes and what is the total difference."}` | `{data: [    "The top 3 expenses for Lorilyn Custard (user ID: f9a39d19-23d2-4cc6-99ef-34e8ba2e11d2) are as follows:","1. Expense name: structure",    "   Total amount: $95,952.00",    "2. Expense name: tangible",    "   Total amount: $71,889.00",    "3. Expense name: 3rd generation",    "   Total amount:$48,477.10","These expenses are the highest in terms of total amount spent."]}` |             |
+| API route                     | Request                                                                                                                                   | Response                                                                                                                                                                                                                                                                                                                                                                                          | Description                                             |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| localhost:8000/process-prompt | POST `{"prompt":"Hi My user id is {} and my name is {}. What are my top 3 expenses and top 3 incomes and what is the total difference."}` | `{data: [    "The top 3 expenses for Lorilyn Custard (user ID: f9a39d19-23d2-4cc6-99ef-34e8ba2e11d2) are as follows:","1. Expense name: structure",    "   Total amount: $95,952.00",    "2. Expense name: tangible",    "   Total amount: $71,889.00",    "3. Expense name: 3rd generation",    "   Total amount:$48,477.10","These expenses are the highest in terms of total amount spent."]}` | Please put the description and other usages of the APIs |
 
 ### Limitations
 
