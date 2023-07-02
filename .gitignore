@@ -3,3 +3,4 @@ node_modules
 .next
 langchain-service/venv
 langchain-service/.env
+langchain-service/__pycache__

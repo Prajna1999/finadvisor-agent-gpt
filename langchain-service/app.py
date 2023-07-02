@@ -35,6 +35,10 @@ agent = initialize_agent(tools, llm, agent=AgentType.OPENAI_FUNCTIONS, verbose=T
 
 app = FastAPI()
 
+@app.get("/status")
+def get_status():
+    return JSONResponse(content={"status":True})
+
 @app.post("/process-prompt")
 def process_prompt(prompt: Prompt):
     try:
