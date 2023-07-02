@@ -1,7 +1,7 @@
 # Fin Advisor GPT
 
 Fin Advisor GPT is a sophisticated financial assistant powered by OpenAI API, Langchain Agent SQLChain, Google SERP API, and OpenAI Functions. It is designed to handle your queries regarding financial data, perform complex mathematical calculations, and fetch relevant internet-based information. The application serves you through its primary endpoint, which is designed to accept POST requests containing your queries. It;s the starting point for a Jarvis like fully autonomous Agent that can execute queries and tasks on user behalf.
-
+Submitted for AI track-2
 ## Table of Contents
 
 - [Endpoints](#endpoints)
