@@ -1,9 +1,12 @@
 const express = require('express');
-const axios = require('axios');
+
 
 const helmet = require("helmet");
 const cors = require("cors");
 
+
+const processPrompt=require('./src/controller/langchain.controllers');
+const createExpense=require('./src/controller/expense.controller')
 const app = express();
 
 app.set('trust proxy', true);
@@ -18,30 +21,12 @@ app.use(cors(
 
 
 app.use(express.json()); // Middleware for parsing JSON bodies from incoming requests
+app.get('/', (req,res)=>{
+    res.send('Hello from server')
+})
+app.post('/api/prompt',processPrompt);
 
-app.post('/api/v1/chat', async (req, res) => {
-    try {
-        const prompt = req.body.text;
-        
-        if (!prompt) {
-            return res.status(400).json({ error: "No prompt provided in request body" });
-        }
-
-        const fastApiRes = await axios.post('http://127.0.0.1:5000/process-prompt', {
-            text: prompt,
-        }, {
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        });
-
-        res.json(fastApiRes.data);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: "An error occurred while processing the prompt" });
-    }
-});
-
+app.post('/api/expense', createExpense);
 
 
 //errrohandling middleware
@@ -50,7 +35,7 @@ app.use((err, req, res, next) => {
     res.status(500).json({ error: 'An unexpected error occurred' });
 });
 
-const port = 5001;
+const port = 5001||process.env.PORT;
 
 app.listen(port, () => {
     console.log(`Express server listening at http://localhost:${port}`);

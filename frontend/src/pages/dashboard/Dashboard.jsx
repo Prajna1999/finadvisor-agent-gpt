@@ -1,6 +1,6 @@
-import React from 'react';
+
 import { Container, Row, Col } from 'react-bootstrap';
-import {PieChart, NavigationBar,BarChart, ChatWidgetComponent} from '../components/index';
+import {PieChart, NavigationBar,BarChart } from '../components/index';
 
 
 const Dashboard = () => {
