@@ -3,6 +3,8 @@ pwd
 python --version
 python3 -m pip install --upgrade pip
 
+cat /etc/*-release
+
 sudo apt-get update
 sudo apt-get install software-properties-common
 
